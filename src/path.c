@@ -31,15 +31,24 @@ static void seconds_display_callback(Layer *layer, GContext* ctx) {
   struct tm *t = localtime(&now);
   static char today[5];
   
+  // seconds in different areas
+
   GRect  rc;
   rc.origin.x = MARGIN;
   rc.origin.y = 150;
   rc.size.w   = t->tm_sec * BLOCKSIZE;
   rc.size.h   = BLOCKSIZE * 2;
   
+#ifdef PBL_COLOR
+  // draw seconds
+  graphics_context_set_stroke_color(ctx, GColorJazzberryJam);
+  graphics_context_set_fill_color(ctx, GColorJazzberryJam);
+  
+#else
   // draw seconds
   graphics_context_set_stroke_color(ctx, GColorBlack);
   graphics_context_set_fill_color(ctx, GColorBlack);
+#endif
   graphics_fill_rect(ctx, rc, 0, GCornerNone);
   
   // draw date line
@@ -113,7 +122,7 @@ static void window_load(Window *window) {
   text_layer_set_text_alignment(text_minute_d, GTextAlignmentLeft);
   layer_add_child(window_layer, text_layer_get_layer(text_minute_d));
   
-	// Init the layer for the minute display
+  // Init the layer for the minute display
   seconds_layer = layer_create(bounds);
   layer_set_update_proc(seconds_layer, seconds_display_callback);
   layer_add_child(window_layer, seconds_layer);
@@ -176,6 +185,7 @@ static void init(void) {
     .unload = window_unload,
   });
   window_stack_push(window, true);
+  window_set_fullscreen(window, true);
   window_set_background_color(window, GColorWhite);
   tick_timer_service_subscribe(SECOND_UNIT, handle_time_tick);
 }
