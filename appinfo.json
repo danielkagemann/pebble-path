@@ -1,0 +1,19 @@
+{
+  "uuid": "267b7c35-2367-4c4a-aab8-e1a7466ffbf8",
+  "shortName": "path",
+  "longName": "path",
+  "companyName": "MakeAwesomeHappen",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
