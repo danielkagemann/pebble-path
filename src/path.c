@@ -204,7 +204,7 @@ static unsigned short get_display_hour(unsigned short hour ,char* ampm) {
      return hour;
   }
 
-  strcpy (ampm, (hour > 12) ? "PM" : "AM");
+  strcpy (ampm, (hour >= 12) ? "PM" : "AM");
   unsigned short display_hour = hour % 12;
   return display_hour ? display_hour : 12;
 }
