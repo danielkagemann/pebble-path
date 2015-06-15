@@ -1,20 +1,25 @@
 {
-  "uuid": "267b7c35-2367-4c4a-aab8-e1a7466ffbf8",
-  "shortName": "path",
-  "longName": "path",
-  "companyName": "corefault",
-  "versionCode": 1,
-  "versionLabel": "1.2",
-  "sdkVersion": "3",
-  "targetPlatforms": ["aplite", "basalt"],
-  "capabilities": [ "configurable" ],
-  "watchapp": {
-    "watchface": true
-  },
-  "appKeys": {
-    "invert": 0
-  },
-  "resources": {
-    "media": []
-  }
+    "appKeys": {
+        "invert": 0
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "corefault",
+    "longName": "path",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "path",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
+    "uuid": "267b7c35-2367-4c4a-aab8-e1a7466ffbf8",
+    "versionLabel": "1.3",
+    "watchapp": {
+        "watchface": true
+    }
 }

@@ -13,7 +13,7 @@ static Layer      *seconds_layer;
 #define MARGIN      12
 #define DATESIZE    20
 
-#define DURATION    300
+#define DURATION    250
 #define DELAY       400
 
 #define OPTION_INVERTED    0
@@ -266,7 +266,9 @@ static void init(void) {
     .unload = window_unload,
   });
   window_stack_push(window, true);
-  window_set_fullscreen(window, true);
+#ifdef PBL_PLATFORM_APLITE 
+     window_set_fullscreen(window, true);
+#endif
   window_set_background_color(window, colorBg);
   tick_timer_service_subscribe(SECOND_UNIT, handle_time_tick);
 }
